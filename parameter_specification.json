@@ -1,0 +1,29 @@
+{
+  "global_seed": 20260827,
+  "patients": 5000,
+  "features": 138,
+  "feature_layers": {
+    "clinical": 18,
+    "cytokine": 20,
+    "genomic": 20,
+    "transcriptomic": 25,
+    "proteomic": 25,
+    "metabolomic": 30
+  },
+  "partition": "70:15:15, joint CRS/ICANS stratification",
+  "missingness": "2% MCAR per continuous feature",
+  "longitudinal": "days 0-10; patient-specific Gaussian rise/decay + Gaussian noise",
+  "transformer": {
+    "embedding": 128,
+    "heads": 8,
+    "encoder_blocks": 4,
+    "feedforward": 512,
+    "dropout": 0.2,
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "max_epochs": 100,
+    "early_stopping_patience": 10,
+    "trainable_parameters": 807306
+  },
+  "warning": "Fully synthetic proof-of-concept; not clinical patient data."
+}
